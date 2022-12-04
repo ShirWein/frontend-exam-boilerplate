@@ -75,14 +75,12 @@ async function getExchangeRateFromForm(event) {
   let date = document.querySelector('input').value;
 
   getExchangeRateFromApi(date,cur); 
+   //@ts-ignore
   result.innerHTML =`<p${cur}, ${date}</p>`;
   let spinner = document.querySelector('.spinner')
   //* Remove the spinner
+   //@ts-ignore
   spinner.innerHTML = ''
-
-
-
-
 }
 
 /**
@@ -92,6 +90,14 @@ async function getExchangeRateFromForm(event) {
  */
 
 async function populateTable() {
+    const response = await fetch(`https://currency-ror1.vercel.app/api/currency?rdate=${dateCode}&curr=${currencyCode}`);
+    const result = await response.json();
+    let arrResult = Array(result);
+    arrResult.forEach((object)=> {
+        let table = document.querySelector('table');
+        table.appendChild(table.createElement('tr').innerHTML = object);
+        
+    })
 
 
 
