@@ -35,6 +35,8 @@ h1 {
   position: absolute;
   bottom: 7px;
   margin-left: 10px;
+  background-color: #1976d2;
+  
 
   &.small {
     bottom: 2px;
@@ -91,6 +93,7 @@ input[type='submit'] {
 #currency {
   width: 200px;
 }
+
 
 
 

@@ -45,6 +45,9 @@ function attachListeners() {
  */
 
 async function getExchangeRateFromApi(dateCode: string, currencyCode: string) {
+    const response = await fetch(`https://currency-ror1.vercel.app/api/currency?rdate=${dateCode}&curr=${currencyCode}`);
+    const result = await response.json();
+    return result.CURRENCIES.LAST_UPDATE, result.CURRENCIES.currency.RATE; 
 
 
 }
@@ -59,6 +62,25 @@ async function getExchangeRateFromApi(dateCode: string, currencyCode: string) {
 async function getExchangeRateFromForm(event) {
   event.preventDefault();
   event.stopPropagation();
+  let result = document.querySelector('.result');
+  //* if the result box contains a result (a number) -  clear it. 
+  if (result) {
+    result.innerHTML = ''
+  }
+  
+  //* The date and currency should be used to call the API in the following function
+  //@ts-ignore
+  let cur = document.querySelector('option').value;
+   //@ts-ignore
+  let date = document.querySelector('input').value;
+
+  getExchangeRateFromApi(date,cur); 
+  result.innerHTML =`<p${cur}, ${date}</p>`;
+  let spinner = document.querySelector('.spinner')
+  //* Remove the spinner
+  spinner.innerHTML = ''
+
+
 
 
 }
@@ -75,6 +97,9 @@ async function populateTable() {
 
   return null;
 }
+
+
+
 
 // function sum (b: number, c: number, a?:number) {
 //     return b+c+a
