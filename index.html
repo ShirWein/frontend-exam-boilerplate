@@ -7,7 +7,74 @@
     <title>GRUnitech WebDev Exam</title>
   </head>
   <body>
-    Hello Worldd
+    <h1>Currency Converter</h1>
+
+    <!-- HTML implementation - a form that allows the user to select currency and date and 
+    displays the exchange date for these parameters. -->
+    <section class="currency-converter-form">
+      <form id="currency-converter-form" action="">
+        <label for="currency">Select Currency:</label>
+        <select name="currency" id="currency">
+          <option value="">--Please choose a currency--</option>
+          <option value="dollar">USD (United States Dollar)</option>
+          <option value="Euro">EUR (Euro)</option>
+          <option value="Euro">GBP (Great Britain Pound)</option>
+          <option value="canada">CAD (Canadian Dollar)</option>
+          <option value="australia">AUD (Australian Dollar)</option>
+          <option value="japan">GPY (Japanese Yen)</option>
+        </select>
+        <br/>
+        <label for="date"> Exchange Date:</label>
+        <input type="date" value="2021-10-01">
+        <br/> 
+        <input type="submit" value="Submit"> 
+        <div class="result">
+            The Exchange Rate to ILS: <span id="exchangeResult" class="spinner">3.452</span>
+          </div>
+      </form>
+    </section>
+
+    <!-- HTML implementation - a data table that shows list of currencies, 
+    dates and rates according to a given array of parameters -->
+    <br/>
+    <section class="currency-converter-table">
+      <table>
+        <thead>
+        <tr>
+          <th>date</th>
+          <th>currency</th>
+          <th>exchange rate</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>12-01-2022</td>
+            <td>USD $</td>
+            <td>3.1548</td>
+          </tr>
+          <tr>
+            <td>01-02-2021</td>
+            <td>EUR</td>
+            <td>3.276</td>
+          </tr>
+          <tr>
+            <td>25-02-2020</td>
+            <td>GPY</td>
+            <td>3.1548</td>
+          </tr>
+
+
+
+        </tbody>
+        
+      
+      </table>
+
+    </section>
+   
+
+    
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
