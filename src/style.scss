@@ -11,3 +11,119 @@
   -webkit-text-size-adjust: 100%;
 }
 
+$accent-color: darkslateblue;
+$cell-border: $accent-color 2px solid;
+$section-cell-border-radius: 4px;
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.result {
+  position: relative;
+  padding: 20px;
+  border: $cell-border;
+  border-radius: $section-cell-border-radius;
+}
+
+.spinner {
+  display: inline-block;
+  position: absolute;
+  bottom: 7px;
+  margin-left: 10px;
+  background-color: #1976d2;
+  
+
+  &.small {
+    bottom: 2px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+table {
+  border: #1976d2 2px solid;;
+  border-radius: $section-cell-border-radius;
+  margin: auto;
+  width: 304px;
+
+  thead,
+  tfoot {
+    background-color: $accent-color;
+    color: #fff;
+  }
+
+  tr {
+    position: relative;
+  }
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+.currency-converter-form {
+  border: 2px solid blueviolet;
+  padding: 20px;
+  border-radius: 4px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='submit'] {
+  width: 60px;
+}
+
+#currency {
+  width: 200px;
+}
+
+
+
+
+// #exampleID {
+//   background-color: red;
+// }
+
+
+// div p.Class a #ID {  
+//   color: blue
+// }
+
+// div {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   background-color: red;
+//   width: 50px;
+//   height: 50px;
+//   gap: 240px;
+//   justify-content: center;
+//   align-items: center;
+  
+// }
+
+// div.container {
+//   width: 700px;
+//   height: 300px;
+//   background-color: grey;
+
+// } 
+
+
+
